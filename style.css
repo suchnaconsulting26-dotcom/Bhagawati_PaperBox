@@ -957,12 +957,13 @@ select.form-control {
     align-items: center;
   } */
 
-  .hero__content {
-    padding: 1rem;
+   .hero__content {
+    right: 50px;
+    width: 70%;
   }
 
   .hero_title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1.2;
   }
 
