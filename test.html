@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxCraft Industries - Premium Corrugated Packaging Solutions</title>
+    <meta name="description" content="Leading corrugated box manufacturer with 25+ years of experience. Custom packaging solutions, bulk production, and sustainable packaging materials.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero with gradient background and nav -->   
+    <!-- Header & Navigation -->
+    <header class="header">
+    <nav class="nav container">
+    <div class="nav__brand">
+        <img src="logo.jpg" alt="BoxCraft Industries Logo" style="mix-blend-mode: screen; width: 50px; height: 50px;" />
+        <div class="nav__brand-text">
+            <h2>Bhagawati</h2>
+            <h3>Paperbox Industries</h3>
+        </div>
+    </div>
+    
+<div class="social-sidebar">
+    <!-- Facebook -->
+    <a href="#" class="social-icon facebook hidden">
+        <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.32 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10.016 10.016 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
+    </a>
+    <!-- More icons omitted for brevity -->
+
+    <!-- More options button -->
+    <a id="more-btn" class="more-options">
+        <svg viewBox="0 0 24 24"><path d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"/></svg>
+    </a>
+</div>
+
+<style>
+/* Add these styles */
+.more-options {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.more-options.shrink {
+    transform: scale(0.7);
+    opacity: 0.6;
+}
+
+.social-sidebar a {
+    display: none; /* Hide all social icons by default */
+}
+
+.social-sidebar.open .social-icon {
+    display: block; /* Show icons when sidebar is open */
+}
+</style>
+
+<script>
+// JavaScript to handle the toggle effect
+const moreBtn = document.getElementById("more-btn");
+const socialSidebar = document.querySelector(".social-sidebar");
+
+moreBtn.addEventListener("click", function() {
+    moreBtn.classList.toggle("shrink");
+    socialSidebar.classList.toggle("open");
+});
+</script>
+</body>
+</html>
