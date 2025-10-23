@@ -594,7 +594,7 @@ setInterval(moveNext, 5000);
             Phone: ${phone}%0A
             Message: ${message}`;
 
-        const whatsappNumber = "+919409440195"; // Replace with your WhatsApp number (no "+" or spaces)
+        const whatsappNumber = "+919016725036"; // Replace with your WhatsApp number (no "+" or spaces)
 
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${fullMessage}`;
 
