@@ -1524,20 +1524,23 @@ select.form-control {
 @media (max-width: 768px) {
   .nav__menu {
     position: fixed;
-    top: 70px;
+    top: 60px;
     left: 0;
     width: 100%;
     background: var(--boxcraft-dark-charcoal);
     flex-direction: column;
     padding: var(--space-16);
-    transform: translateX(-100%);
-    transition: transform var(--duration-normal) var(--ease-standard);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-normal) var(--ease-standard), visibility var(--duration-normal) var(--ease-standard);
     border-bottom: 1px solid var(--boxcraft-medium-gray);
     gap: var(--space-16);
+    z-index: 1000;
   }
 
   .nav__menu.nav__menu--open {
-    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav__toggle {
@@ -1704,34 +1707,40 @@ html {
 
  /* Hero header styles for about page - gradient background instead of image */
         .hero {
+          top: 50px; /* Adjust for fixed header */
             position: relative;
             color: #fff;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
             min-height: 65vh;
         }
         .hero::before {
             content: "";
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             /* soft diagonal gradient similar to provided design */
             background-image: url("assets/bg_header.png");
-            background-size: 100% 100%;          /* Scales to fill screen */
+            background-size: 100% 100%;         /* Better scaling for mobile */
             background-repeat: no-repeat;    /* Prevents tiling */
             background-position: center;     /* Keeps it centered */
-            background-attachment: fixed;    /* Creates subtle parallax effect */
-            color: #333;   
+            background-attachment: scroll;    /* Fixed attachment can cause issues on mobile */
+            color: #333;
             z-index: 0;
-            
             backdrop-filter: blur(4px);
+            height: 100vh;
         }
-        
+
         .hero__content {
             position: relative;
             z-index: 2;
             display: flex;
             align-items: center;
             gap: 30px;
-            padding: 60px 20px;
+            min-height: 50vh;
+            padding: 60px 80px;
         }
         .hero__text {
             flex: 1 1 60%;
@@ -1755,12 +1764,59 @@ html {
             /* text-align: center; */
         }
 
-        /* Navigation tweaks */
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 50vh;
+
+            }
+            .hero::before {
+                background-size: cover;
+                background-attachment: scroll;
+            }
+            .hero__content {
+                flex-direction: column;
+                gap: 20px;
+                padding: 40px 16px;
+                text-align: center;
+            }
+            .hero__text {
+                flex: 1 1 100%;
+                max-width: none;
+            }
+            .hero__title {
+                font-size: 32px;
+                letter-spacing: 0.5px;
+                margin: 0 0 8px 0;
+            }
+            .hero .breadcrumb {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 40vh;
+            }
+            .hero__content {
+                padding: 30px 12px;
+                gap: 15px;
+            }
+            .hero__title {
+                font-size: 24px;
+                margin: 0 0 6px 0;
+            }
+            .hero .breadcrumb {
+                font-size: 13px;
+            }
+        }
+
+        /* Navigation tweaks
         .nav.container { display: flex; align-items: center; justify-content: space-between; }
         .nav__brand h2 { margin:0; color: #fff; font-size: 20px; }
         .nav__menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; }
         .nav__link { color: rgba(255,255,255,0.95); text-decoration: none; font-weight:600; }
-        .nav__toggle { background: transparent; border: none; display: none; }
+        .nav__toggle { background: transparent; border: none; display: none; } */
 
         /* Responsive */
         @media (max-width: 900px) {
