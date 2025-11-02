@@ -469,6 +469,13 @@ pre code {
   cursor: not-allowed;
 }
 
+/* Brochure button specific tweaks */
+.brochure-btn {
+  min-width: 180px;
+  padding: var(--space-8) var(--space-20);
+}
+
+
 /* Form elements */
 .form-control {
   display: block;
